@@ -1,9 +1,13 @@
+// install all the dependencies needed
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 
+// define function needed to write a file using the promisify method
 const writeFileAsync = util.promisify(fs.writeFile);
 
+
+// the function to prompt the user to answer the questions needed to generate the README.md file
 function promptUser() {
     return inquirer
         .prompt([
@@ -69,12 +73,13 @@ function promptUser() {
         ]);
 }
 
+// gives the format for how the readme file will be generated and includes the template literals for all of the answers
 function generateReadMe(answers) {
 
     return `
     # ${answers.project}
-    [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://${answers.url})
-    ​
+    [![GitHub license](https://img.shields.io/badge/license-${answers.license}-blue.svg)](https://${answers.url})
+
     ## Description
     ​
     ${answers.description}
@@ -126,6 +131,7 @@ function generateReadMe(answers) {
     If you have any questions about the repo, open an issue or contact [${answers.github}](undefined) directly at ${answers.email}.`;
 }
 
+// async function that will initiate the program when ran and will console log a sucessful message if the readme file is generated
 async function init() {
     //console.log('hi');
     try {
@@ -141,4 +147,5 @@ async function init() {
     }
 }
 
+// runs the program
 init();
