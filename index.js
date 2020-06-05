@@ -77,58 +77,57 @@ function promptUser() {
 function generateReadMe(answers) {
 
     return `
-    # ${answers.project}
-    [![GitHub license](https://img.shields.io/badge/license-${answers.license}-blue.svg)](https://${answers.url})
+# ${answers.project}
+[![GitHub license](https://img.shields.io/badge/license-${answers.license}-blue.svg)](https://${answers.url})
 
-    ## Description
-    ​
-    ${answers.description}
-    ​
-    ## Table of Contents 
-    ​
-    * [Installation](#installation)
-    ​
-    * [Usage](#usage)
-    ​
-    * [License](#license)
-    ​
-    * [Contributing](#contributing)
-    ​
-    * [Tests](#tests)
-    ​
-    * [Questions](#questions)
-    ​
-    ## Installation
-    ​
-    To install necessary dependencies, run the following command:
-    ​
-    \`\`\`
-    ${answers.installation}
-    \`\`\`
-    ​
-    ## Usage
-    ​
-    ${answers.usage}
-    ​
-    ## License
-    ​
-    This project is licensed under the ${answers.license} license.
-      
-    ## Contributing
-    ​
-    ${answers.contribution}
-    ​
-    ## Tests
-    ​
-    To run tests, run the following command:
-    ​
-    \`\`\`
-    ${answers.test}
-    \`\`\`
-    ​
-    ## Questions
-    ​
-    If you have any questions about the repo, open an issue or contact [${answers.github}](undefined) directly at ${answers.email}.`;
+## Description
+​
+${answers.description}
+
+## Table of Contents 
+
+* [Installation](#installation)
+
+* [Usage](#usage)
+
+* [License](#license)
+
+* [Contributing](#contributing)
+​
+* [Tests](#tests)
+
+* [Questions](#questions)
+
+## Installation
+
+To install necessary dependencies, run the following command:
+
+\`\`\`
+${answers.installation}
+\`\`\`
+
+## Usage
+
+${answers.usage}
+
+## License
+
+This project is licensed under the ${answers.license} license.
+
+## Contributing
+
+${answers.contribution}
+
+## Tests
+
+To run tests, run the following command:
+
+\`\`\`
+${answers.test}
+\`\`\`
+## Questions
+
+If you have any questions about the repo, open an issue or contact [${answers.github}](undefined) directly at ${answers.email}.`;
 }
 
 // async function that will initiate the program when ran and will console log a sucessful message if the readme file is generated
